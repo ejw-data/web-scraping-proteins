@@ -1,0 +1,398 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<style>
+.container .thirteen.columns {
+    width: calc(94% - 160px);
+}
+.container .four.columns {
+  width:23%;
+  margin-right:1%;
+  margin-left:1%;
+}
+.container .one-third.columns {
+    width: 31%;
+    margin-right: 1%;
+    margin-left: 1%;
+}
+.container .sixteen.columns {
+    width: 1080px;
+}
+.top-right {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  background-color:#117c8a;
+  padding: 1.5em;
+  max-width:500px;
+  color:white;
+}
+.banner{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.white{
+    color:white;
+}
+.target-section{
+    background-color:#117c8a;
+}
+.well{
+    width:100%;
+    height:100px;
+}
+.filter-block{
+    float: left;
+    margin-right: 2em;
+}
+#filter-btn{
+    margin-top: 20px;
+}
+hr{
+    border-top: 3px solid rgb(0 0 0 / 75%);
+}
+#target-popularity{
+   height:600px;
+}
+.card{
+height:380px;
+}
+    * { box-sizing: border-box; }
+    body {
+      font: 16px Arial;
+    }
+    .autocomplete {
+      /*the container must be positioned relative:*/
+      position: relative;
+      display: inline-block;
+    }
+    input {
+      border: 1px solid transparent;
+      background-color: #f1f1f1;
+      padding: 10px;
+      font-size: 16px;
+    }
+    input[type=text] {
+      background-color: #f1f1f1;
+      width: 100%;
+      color: black;
+    }
+    select {
+      background-color: #f1f1f1;
+      color: black;
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: black;
+      opacity: 1; /* Firefox */
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: black;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      color: black;
+    }
+
+    input[type=submit] {
+      background-color: DodgerBlue;
+      color: #fff;
+    }
+    .autocomplete-items {
+      position: absolute;
+      border: 1px solid #d4d4d4;
+      border-bottom: none;
+      border-top: none;
+      z-index: 99;
+      /*position the autocomplete items to be the same width as the container:*/
+      top: 100%;
+      left: 0;
+      right: 0;
+    }
+    .autocomplete-items div {
+      padding: 10px;
+      cursor: pointer;
+      background-color: #fff;
+      border-bottom: 1px solid #d4d4d4;
+    }
+    .autocomplete-items div:hover {
+      /*when hovering an item:*/
+      background-color: #e9e9e9;
+    }
+    .autocomplete-active {
+      /*when navigating through the items using the arrow keys:*/
+      background-color: DodgerBlue !important;
+      color: #ffffff;
+    }
+   .msg-box{
+      width:50%;
+      float:left
+    }
+.group-box{
+    display: inline-block;
+    width: 100%;
+}
+.count-msg{
+color:red;
+font-size:1.25em;
+}
+@media only screen and (max-width: 600px){
+.sixteen, .thirteen, .one-third, .four, .three{
+width:100%!important;
+}
+.top-right{
+width:100%!important;
+left:0%!important;
+max-width:600px;
+}
+.banner img{
+height:200px;
+}
+.banner{
+margin-bottom:0px!important;
+}
+}
+@media only screen and (max-width: 767px){
+#target-spotlight img{
+width:100%!important;
+}
+.card{
+height:unset;
+}
+.top-right{
+left:10%;
+}
+.top-right h1{
+font-size:1.5rem;
+}
+.top-right h2 {
+font-size: 1.3rem;
+}
+#target-examples img{
+display:none;
+}
+.banner{
+margin-bottom:3em;
+}
+#target-popularity {
+    height: 650px;
+}
+.comtainer{
+width:unset;
+}
+}
+@media only screen and (min-width: 767px) and (max-width: 1200px){
+#target-examples .four {
+width:400px
+}
+.card{
+height:unset;
+}
+.container .one-third.columns {
+    width: 250px;
+}
+.container .thirteen.columns {
+    width: 660px;
+}
+}
+</style>
+<div class="banner"><img style="width: 100%;" src="/wp-content/uploads/2021/07/word_cloud_narrow.jpg" alt="header image" />
+<div class="top-right">
+<h1 class="strong white" style="text-decoration:underline">Targets</h1>
+<h2 class="white">Identifying the determinants of health and disease through proteins expressed by genes.</h2>
+</div>
+</div>
+
+<div class="target-section">
+<div id="target-examples" class="container" style="padding-top:1em; padding-bottom:1em">
+
+<div class="well">
+<hr style="width:70% ;text-align:left;margin-left:-20px; border-color:white;">
+<h2 style="color:white;">EXAMPLE TARGET SUBMISSIONS</h2>
+
+<div class="four columns">
+<a href="https://pubmed.ncbi.nlm.nih.gov/33239043/">
+<div class="card" style="width: 100%">
+<img class="card-img-top" src="/wp-content/uploads/2021/07/img(1).jpg" alt="Person's name profile image">
+  <div class="card-body">
+<h5 class="card-title">Fullname</h5>
+<p class="card-text">Department, Institution</p>
+  </div>
+</div>
+</a>
+</div>
+
+<div class="four columns">
+<a href="https://pubmed.ncbi.nlm.nih.gov/28510335/">
+<div class="card" style="width: 100%">
+<img class="card-img-top" src="/wp-content/uploads/2021/07/img(1).jpg" alt="Person's name profile image">
+  <div class="card-body">
+<h5 class="card-title">Fullname</h5>
+<p class="card-text">Department, Institution</p>
+  </div>
+</div>
+</a>
+</div>
+
+<div class="four columns">
+<a href="https://pubmed.ncbi.nlm.nih.gov/30381408/">
+<div class="card" style="width: 100%">
+<img class="card-img-top" src="/wp-content/uploads/2021/07/img(1).jpg" alt="Person's name profile image">
+  <div class="card-body">
+<h5 class="card-title">Fullname</h5>
+<p class="card-text">Department, Institution</p>
+  </div>
+</div>
+</a>
+</div>
+
+<div class="four columns">
+<a href="https://pubmed.ncbi.nlm.nih.gov/29649363/">
+<div class="card" style="width: 100%">
+<img class="card-img-top" src="/wp-content/uploads/2021/07/img(1).jpg" alt="Person's name profile image">
+  <div class="card-body">
+<h5 class="card-title">Fullname</h5>
+<p class="card-text">Department, Institution</p>
+  </div>
+</div>
+</a>
+</div>
+
+</div>    
+
+</div>
+</div>
+
+<div id="target-options" class="container">
+
+<div class="well">
+<hr style="width:70% ;text-align:left;margin-left:-20px">
+<h2>TARGET OPTIONS</h2>
+</div>
+
+<div class="one-third columns">
+<a href="http://nrtdp.northwestern.edu/target-request/"><img style="width: 150px;display:block; margin-right:auto; margin-left:auto" src="/wp-content/uploads/2021/07/email2.jpg" alt="email icon" />
+<p style="font-size:18pt; font-weight:bold;text-align: center">Submit Target</p></a>
+</div>
+
+
+<div class="one-third columns">
+<a href="#target-browse"><img style="width: 150px;display:block; margin-right:auto; margin-left:auto" src="/wp-content/uploads/2021/07/list.png" alt="browse targets icon" />
+<p style="font-size:18pt; font-weight:bold;text-align: center">Browse Target</p></a>
+</div>
+
+
+<div class="one-third columns">
+<a href="http://nrtdp.northwestern.edu/publications/"><img style="width: 150px;display:block; margin-right:auto; margin-left:auto" src="/wp-content/uploads/2021/07/publications.png" alt="publications icon" />
+<p style="font-size:18pt; font-weight:bold;text-align: center">Submit Publications</p></a>
+</div>
+
+
+</div>
+
+<div id="target-spotlight" class="container">
+
+<div class="well">
+<hr style="width:70% ;text-align:left;margin-left:-20px">
+<h2>COLLABORATION SPOTLIGHT</h2>
+<div class="three columns"><img style="width: 150px;" src="/wp-content/uploads/2021/07/img(1).jpg" alt="header image" /></div>
+<div class="thirteen columns" style="float:left">
+<p style="font-size:14pt">xxxxx wanted to determine if there were better ways to identify patients who may reject a liver transplant.  His collaboration with the resource resulted in finding biomarkers in the form of proteomes in blood cells that re associated with a higher transplant rejection rate.  The Top-Down Proteomics methodology directly aided in the identification of these biomarkers and provided insights to the gene signalling pathways that may be significant contributors.<br><br><a href="https://pubmed.ncbi.nlm.nih.gov/28510335/" style="font-size:14pt">Read More about the Resultant Publication.</a></p>
+</div>
+
+</div>
+
+</div>
+
+<div id="target-browse" class="container">
+<div class="sixteen columns">
+       <div class="well">
+<hr style="width:70% ;text-align:left;margin-left:-20px">
+<h2>BROWSE TARGETS</h2>
+
+        <div class="group-box">
+          <div class="msg-box">
+            <form autocomplete="off">
+              <div class="autocomplete" style="width:300px;">
+                <input id="tags" type="text" name="myTargets" placeholder="Target Keyword">
+              </div>
+            </form>
+          </div>
+          <div class="msg-box">
+            <p class="count-msg"></p>
+          </div>
+        </div>
+<br>
+          <div class="filter-block">
+            <h5>Target:</h5>
+            <select id="selTarget"></select>
+          </div>
+          <div class="filter-block">
+            <h5>Gene:</h5>
+            <select id="selGene"></select>
+          </div>
+          <div class="filter-block">
+            <h5>Compartment:</h5>
+            <select id="selCompartment"></select>
+          </div>
+          <div class="filter-block">
+            <button id="filter-btn" type="button" class="btn btn-default" onclick="optionChanged2(this.value)">Filter Table</button>
+          </div>
+        </div>  
+        <div id="table-area" class="">
+          <table id="data-table" class="table table-striped">
+            <thead>
+              <tr>
+                <th class="table-head">Target</th>
+                <th class="table-head">Gene Name</th>
+                <th class="table-head">UniProt ID</th>
+                <th class="table-head">Compartment</th>
+              </tr>
+            </thead>
+            <tbody id = "bodyTable"></tbody>
+          </table>
+        </div>
+</div>
+</div>
+
+<div id="target-popularity" class="container">
+<div class="sixteen columns">
+        <div class="well">
+<hr style="width:70% ;text-align:left;margin-left:-20px">
+<h2>POPULARITY OF TARGETS IN PUBLICATIONS</h2>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          <br>
+          <br>
+          <div id="bar"></div>
+        </div>
+</div>
+</div>
+<div id="target-publications" class="container">
+<div class="sixteen columns">
+
+<hr style="width:70% ;text-align:left;margin-left:-20px">
+<h2>HIGHLIGHTED RESOURCE PUBLICATIONS</h2>
+<ul>
+<li>Kafader JO, Durbin KR, Melani RD, Des Soye BJ, Schachner LF, Senko MW, Compton PD, Kelleher NL. �Individual Ion Mass Spectrometry Enhances the Sensitivity and Sequence Coverage of Top-Down Mass Spectrometry��J Proteome Res.�2020.�19(3) p. 1346-1350�PubMed.�PubMedCentral.</li>
+
+<li>Doubleday PF, Fornelli L, Kelleher NL. �Elucidating Proteoform Dynamics Underlying the Senescence Associated Secretory Phenotype��J Proteome Res.�2020.�19(2) p. 938-948�PubMed.�PubMedCentral.</li>
+
+<li>Salvi A, Amrine CSM, Austin JR, Kilpatrick K, Russo A, Lantvit D, Calderon-Gierszal E, Mattes Z, Pearce CJ, Grinstaff MW, Colby AH, Oberlies NH, Burdette JE. �Verticillin A Causes Apoptosis and Reduces Tumor Burden in High-Grade Serous Ovarian Cancer by Inducing DNA Damage��Mol Cancer Ther.�2020.�19(1) p. 89-100�PubMed.�PubMedCentral.</li>
+
+<li>Park HM, Winton VJ, Drader JJ, Manalili Wheeler S, Lazar GA, Kelleher NL, Liu Y, Tran JC, Compton PD. �Novel Interface for High-Throughput Analysis of Biotherapeutics by Electrospray Mass Spectrometry��Mol Cell Proteom.�2020.�92(2) p. 2186-2193�PubMed.�PubMedCentral.</li>
+
+<li>Cable CJ, Kaplan N, Getsios S, Thomas PM, Perez White BE. �Biotin Identification Proteomics in Three-Dimensional Organotypic Human Skin Cultures��Methods Mol Biol.�2020.�2109 p. 185-197�PubMed.�PubMedCentral.</li>
+
+<li>Fornelli L, Srzentic K, Toby TK, Doubleday PF, Huguet R, Mullen C, Melani RD, Dos Santos Seckler H, DeHart CJ, Weisbrod CR, Durbin KR, Greer JB, Early BP, Fellers RT, Zabrouskov V, Thomas PM, Compton PD, Kelleher NL. �Thorough Performance Evaluation of 213 nm Ultraviolet Photodissociation for Top-down Proteomics��Mol Cell Proteom.�2020.�19(2) p. 405-420�PubMed.�PubMedCentral.</li>
+
+</ul>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="xxxxLinkToHostedJSFilexxx"></script>
